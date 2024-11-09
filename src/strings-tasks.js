@@ -495,7 +495,7 @@ function extractEmails(str) {
  *
  */
 function encodeToRot13(str) {
-  const punctuation = '!@#$%^&*()_-+=[{}|\\:;"\'<>,.?/~ ';
+  const punctuation = '!@#$%^&*()_-+=[]{}|\\:;"\'<>,.?/~ ';
   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   const ROT13 = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
   return [...str]
