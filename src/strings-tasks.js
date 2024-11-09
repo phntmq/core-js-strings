@@ -494,8 +494,15 @@ function extractEmails(str) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  const punctuation = '!@#$%^&*()_-+=[{}|\\:;"\'<>,.?/~ ';
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const ROT13 = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+  return [...str]
+    .map((char) =>
+      !punctuation.includes(char) ? ROT13[alphabet.indexOf(char)] : char
+    )
+    .join('');
 }
 
 /**
